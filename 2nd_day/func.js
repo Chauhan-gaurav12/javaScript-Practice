@@ -163,4 +163,18 @@ meet(greet); // in this first meet run and then greet run
 
 //meet(greet()); // in this first greet execute and then meet execute
 
+function zeptoOrder(){
+    console.log("we have started preparing your food");
+}
 
+function blinkit(){
+    console.log("Blinkit started packing ");
+}
+function payment(amount,callback){
+    console.log(`${amount} payment has initialized`);
+    console.log("payment is received ");
+    callback();
+}
+
+//payment(500,blinkit);
+payment(300,zeptoOrder);
