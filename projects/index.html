@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js clock project</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282c34;
+            color: white;
+            font-family: 'Arial' sans-serif;
+        }
+        .clock-container{
+            text-align: center;
+            font-size: 48px;
+            border: 2px solid white;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255,255,255,0.1);
+        } 
+
+    </style>
+</head>
+<body>
+    <div class="clock-container">
+        <h1 class="clock">00:00:00 PM</h1>
+    </div>
+    <audio src="./clock_ticking.mp3" preload="auto"></audio>
+    <script>
+        
+        setInterval(()=>{
+            const element =document.querySelector('.clock')
+            const sound = document.querySelector('audio')
+
+            const time = new Date();
+            const options ={
+                timeZone : 'Asia/kolkata',
+                hour : '2-digit',
+                minute : '2-digit',
+                second : '2-digit'
+            }  
+            element.textContent = time.toLocaleString('en-US',options);
+            //sound.play();
+        },1000)
+    </script>
+</body>
+</html>
